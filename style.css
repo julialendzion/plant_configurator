@@ -1,5 +1,6 @@
 #shadow_Image {
   pointer-events: none;
+  opacity: 70%;
 }
 
 body {
