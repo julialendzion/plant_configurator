@@ -13,6 +13,7 @@ body {
 
 .g_to_interact {
   fill: white;
+  width: 100vw;
 }
 .g_to_interact:hover {
   fill: gray;
@@ -25,4 +26,9 @@ body {
 
 #buttons {
   padding: 20px;
+}
+
+svg {
+  overflow: visible;
+  width: 50vw;
 }
