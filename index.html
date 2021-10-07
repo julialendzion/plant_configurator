@@ -3,13 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+
     <title>Plant Configurator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section></section>
-    <div id="buttons">
-      <svg viewBox="0 0 900 200" id="buttons">
+    <div id="preview">
+      <div id="svgDiv"></div>
+      <img
+        src="assets/pothos.png"
+        alt="Pothos"
+        class="hide"
+        data-feature="pothos"
+      />
+      <img
+        src="assets/cactus.png"
+        alt="Cactus"
+        class="hide"
+        data-feature="cactus"
+      />
+      <img
+        src="assets/lilly.png"
+        alt="Lilly"
+        class="hide"
+        data-feature="lilly"
+      />
+    </div>
+    <div id="buttons-container">
+      <svg viewBox="0 0 700 150" id="buttons">
         <rect class="color_btn" width="100" height="100" fill="" />
         <rect
           class="color_btn"
@@ -41,6 +63,20 @@
         />
         <rect class="color_btn" x="550" width="100" height="100" fill="blue" />
       </svg>
+      <div id="plantsToChoose">
+        <figure class="option" data-feature="pothos">
+          <img src="assets/pothos-narrow.png" alt="Pothos" />
+          <figcaption>Pothos</figcaption>
+        </figure>
+        <figure class="option" data-feature="cactus">
+          <img src="assets/cactus-narrow.png" alt="Cactus" />
+          <figcaption>Cactus</figcaption>
+        </figure>
+        <figure class="option" data-feature="lilly">
+          <img src="assets/lilly-narrow.png" alt="Lilly" />
+          <figcaption>Lilly</figcaption>
+        </figure>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

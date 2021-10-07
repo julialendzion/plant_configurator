@@ -23,6 +23,10 @@ body {
 #shadow_Image-2 {
   pointer-events: none;
 }
+#buttons-container {
+  height: fit-content;
+  width: fit-content;
+}
 
 #buttons {
   padding: 20px;
@@ -30,5 +34,31 @@ body {
 
 svg {
   overflow: visible;
-  width: 50vw;
+  /* width: 50vw; */
+}
+#plantsToChoose img {
+  width: 100%;
+}
+#plantsToChoose figure {
+  width: 8vw;
+  text-align: center;
+}
+#plantsToChoose {
+  display: flex;
+}
+.hide {
+  opacity: 0;
+}
+#preview img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0%;
+  pointer-events: none;
+}
+#preview {
+  width: 60%;
+  height: 100%;
+  position: relative;
 }
