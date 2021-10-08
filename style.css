@@ -2,7 +2,9 @@
   pointer-events: none;
   opacity: 70%;
 }
-
+h2 {
+  margin: 0;
+}
 main {
   display: flex;
 }
@@ -10,20 +12,24 @@ main {
 /*  possible styling to the div - shouldn't ruin the animation */
 
 #preview {
-  margin: 5vw;
+  margin: 5vw 0vw 2vw 10vw;
 }
 
 #svgDiv {
   border: solid 1px black;
   border-radius: 50% 50% 0 0;
-  height: 50vw;
-  width: 40vw;
+  height: 35vw;
+  width: 27vw;
 }
 
 .color_btn {
   cursor: pointer;
   width: "100";
   height: "100";
+  padding: 10vw;
+}
+#buttons {
+  display: flex;
 }
 
 .g_to_interact {
@@ -41,38 +47,44 @@ main {
 #buttons-container {
   height: fit-content;
   width: fit-content;
+  margin-top: 6vw;
 }
 
 #buttons {
   margin-top: 1rem;
 }
 
-svg {
+#preview svg {
   overflow: visible;
+  padding-top: 80px;
+
   /* width: 50vw; */
 }
+
 #options img {
-  width: 100%;
-  height: 80%;
+  width: 75%;
 }
 #options figure {
-  width: 8vw;
+  width: 9vw;
   text-align: center;
+  margin: 2vw 0 0 0;
 }
 #optionsPlants,
 #optionsElse {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2vw;
+  width: 80%;
 }
 .hide {
   opacity: 0;
 }
 #preview img {
   position: absolute;
-  height: 40vw;
-  width: 40vw;
+  height: 35vw;
+  width: 27vw;
   height: auto;
-  top: 0;
+  top: 80px;
   left: 0;
   pointer-events: none;
 }
