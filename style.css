@@ -1,9 +1,21 @@
+:root {
+  --color-1: #314b1d;
+}
+
 #shadow_Image {
   pointer-events: none;
   opacity: 70%;
 }
+
+h1 {
+  margin-left: 46%;
+  margin-top: 4vw;
+  color: var(--color-1);
+  font-size: 3.75vw;
+}
 h2 {
   margin: 0;
+  font-size: 1.8vw;
 }
 main {
   display: flex;
@@ -12,14 +24,15 @@ main {
 /*  possible styling to the div - shouldn't ruin the animation */
 
 #preview {
-  margin: 5vw 0vw 2vw 10vw;
+  margin: 1vw 0vw 2vw 7vw;
 }
 
 #svgDiv {
-  border: solid 1px black;
+  border: solid 3px var(--color-1);
   border-radius: 50% 50% 0 0;
   height: 35vw;
-  width: 27vw;
+  width: 29vw;
+  box-shadow: 1px 1px 8px 1px #6a6969;
 }
 
 .color_btn {
@@ -47,7 +60,7 @@ main {
 #buttons-container {
   height: fit-content;
   width: fit-content;
-  margin-top: 6vw;
+  margin-top: 3vw;
 }
 
 #buttons {
@@ -82,17 +95,18 @@ main {
 #preview img {
   position: absolute;
   height: 35vw;
-  width: 27vw;
+  width: 29vw;
   height: auto;
   top: 80px;
   left: 0;
   pointer-events: none;
 }
+
 #preview {
   /* width: 60%;
   height: 100%; */
   position: relative;
 }
 #configurator {
-  width: 50%;
+  width: 47%;
 }
