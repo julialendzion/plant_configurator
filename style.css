@@ -7,6 +7,14 @@ body {
   display: flex;
 }
 
+/* possible styling to the div - shouldn't ruin the animation
+#svgDiv {
+  border: solid 1px black;
+  border-radius: 50% 50% 0 0;
+  height: 40vw;
+  width: 35vw;
+} */
+
 .color_btn {
   cursor: pointer;
 }
