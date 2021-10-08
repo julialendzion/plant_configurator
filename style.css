@@ -3,15 +3,20 @@
   opacity: 70%;
 }
 
-body {
+main {
   display: flex;
 }
 
 /*  possible styling to the div - shouldn't ruin the animation */
+
+#preview {
+  margin: 5vw;
+}
+
 #svgDiv {
   border: solid 1px black;
   border-radius: 50% 50% 0 0;
-  height: 40vw;
+  height: 50vw;
   width: 40vw;
 }
 
