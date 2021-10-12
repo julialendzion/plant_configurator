@@ -13,9 +13,7 @@ async function start() {
   let response = await fetch("empty_pot.svg");
   let mySvgData = await response.text();
   document.querySelector("div#svgDiv").innerHTML = mySvgData;
-  document
-    .querySelectorAll(".option")
-    .forEach((option) => option.addEventListener("click", toggleOption));
+  document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
   init();
 }
 
@@ -36,8 +34,13 @@ function init() {
       setColor(event.target.getAttribute("fill"));
     });
   });
-}
 
+  document.querySelector("#colorInput").addEventListener("input", colorChosen);
+}
+function colorChosen(event) {
+  setColor(event.target.value);
+  document.querySelector("#colorInput").style.backgroundColor = event.target.value;
+}
 function setElement(element) {
   elementToPaint.push(element);
   console.log(elementToPaint);
@@ -82,9 +85,7 @@ function toggleOption(event) {
     // TODO: More code
     console.log(`Feature ${feature} is turned on!`);
     target.classList.add("chosen");
-    document
-      .querySelector(`[data-feature=${feature}]`)
-      .classList.remove("hide");
+    document.querySelector(`[data-feature=${feature}]`).classList.remove("hide");
     const selectedFeatureImg = document.createElement("img");
     selectedFeatureImg.id = `${feature}Created`;
     selectedFeatureImg.src = `assets/${feature}-narrow.png`;
@@ -101,6 +102,7 @@ function toggleOption(event) {
     console.log(`Feature ${feature} is turned off!`);
     target.classList.remove("chosen");
     document.querySelector(`[data-feature=${feature}]`).classList.add("hide");
+
     animateFeatureBackwards(feature);
 
     // document.querySelector(`#${feature}Created`).remove();
@@ -129,9 +131,7 @@ function animateFeatureForwards(feature) {
   const boxToAnimate = document.querySelector(`img#${feature}Created`);
   console.log(boxToAnimate);
 
-  const firstPosition = document.querySelector(
-    `#options [data-feature=${feature}] img`
-  );
+  const firstPosition = document.querySelector(`#options [data-feature=${feature}] img`);
   console.log(firstPosition);
 
   //FIRST FRAME
@@ -164,12 +164,12 @@ function animateFeatureForwards(feature) {
 }
 function animateFeatureBackwards(feature) {
   const boxToAnimate = document.querySelector(`img#${feature}Created`);
-  const lastPosition = document.querySelector(
-    `#options [data-feature=${feature}] img`
-  );
+  const lastPosition = document.querySelector(`#options [data-feature=${feature}] img`);
   const firstFrame = boxToAnimate.getBoundingClientRect();
   const lastFrame = lastPosition.getBoundingClientRect();
+
   console.log("first positon", firstFrame);
+
   console.log("last position", lastFrame);
   const deltaX = lastFrame.left - firstFrame.left;
   console.log("deltaX", deltaX);
@@ -193,4 +193,8 @@ function animateFeatureBackwards(feature) {
 
     { duration: 1000, easing: "ease-in-out" }
   );
+
+  /// why isn't this working??
+
+  // document.querySelector(boxToAnimate).addEventListener("animationend", () => document.querySelector(`img#${feature}Created`).remove());
 }
