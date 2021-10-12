@@ -1,5 +1,15 @@
+@font-face {
+  font-family: "Magilio";
+  src: url("assets/MagilioRegular-Yzv2O.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --color-1: #314b1d;
+}
+html {
+  font-family: "Magilio";
 }
 
 #shadow_Image {

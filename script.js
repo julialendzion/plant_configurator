@@ -54,46 +54,34 @@ function setColor(color) {
   elementToPaint = [];
 }
 //TOGGLING
+
 function toggleOption(event) {
   const target = event.currentTarget;
   const feature = target.dataset.feature;
-
-  // TODO: Toggle feature in "model"
-
-  // features[feature] = true;
-
-  // If feature is (now) turned on:
-
-  // - mark target as chosen (add class "chosen") v
-  // - un-hide the feature-layer(s) in the #product-preview; v
-  // - create featureElement and append to #selected ul v
-  // - create FLIP-animation to animate featureElement from img in target, to
-  //   its intended position. Do it with normal animation or transition class!
-
-  // Else - if the feature (became) turned off:
-  // - no longer mark target as chosen
-  // - hide the feature-layer(s) in the #product-preview
-  // - find the existing featureElement in #selected ul
-  // - create FLIP-animation to animate featureElement to img in target
-  // - when animation is complete, remove featureElement from the DOM
-
+  const sort = target.dataset.sort;
+  const previewToAnimate = document.querySelector(`[data-feature=${feature}]`);
+  console.log(sort);
   if (features[feature] == false) {
     // feature added
     features[feature] = true;
-
     // TODO: More code
     console.log(`Feature ${feature} is turned on!`);
+
+    //CHECK IF A CLASS IS PRESENT
+    // let currentlyChosen = document.getElementsByClassName("chosen");
+    // console.log(currentlyChosen.length);
+    // if (currentlyChosen.length > 0) {
+    //   console.log(currentlyChosen.length);
+    // const elementToremove = document.querySelector(".chosen");
+    // removeOther(elementToremove.dataset.feature);
+    // } else {
     target.classList.add("chosen");
-    document
-      .querySelector(`[data-feature=${feature}]`)
-      .classList.remove("hide");
-    const selectedFeatureImg = document.createElement("img");
-    selectedFeatureImg.id = `${feature}Created`;
-    selectedFeatureImg.src = `assets/${feature}-narrow.png`;
-    selectedFeatureImg.alt = capitalize(feature);
-    selectedFeatureImg.style.height = "12vw";
-    document.querySelector("#selected ul").appendChild(selectedFeatureImg);
-    animateFeatureForwards(feature);
+
+    previewToAnimate.classList.remove("hide");
+    previewToAnimate.style.left = "38%";
+    swipeToCenter(feature);
+
+    // }
 
     // TODO: More code
   } else {
@@ -102,84 +90,41 @@ function toggleOption(event) {
 
     console.log(`Feature ${feature} is turned off!`);
     target.classList.remove("chosen");
-    document.querySelector(`[data-feature=${feature}]`).classList.add("hide");
-    animateFeatureBackwards(feature);
-
-    // document.querySelector(`#${feature}Created`).remove();
+    const previewToAnimate = document.querySelector(
+      `[data-feature=${feature}]`
+    );
+    previewToAnimate.style.left = "0%";
+    swipeToEnd(feature);
   }
+  document
+    .querySelectorAll(`#preview [data-sort=${sort}]`)
+    .forEach((displayed_feature) => {
+      // let currentlyChosen = document.querySelector(".chosen");
+      // console.log(currentlyChosen);
+      // swipeToEnd(displayed_feature.dataset.feature);
+      // console.log("displayed feature is", displayed_feature.dataset.feature);
+      displayed_feature.classList.add("hide");
+      console.log(`all ${sort} is removed`);
+    });
+  let currentlyChosen = document.querySelector(".chosen");
+  console.log(currentlyChosen);
+  previewToAnimate.classList.remove("hide");
 }
 
-// Create featureElement to be appended to #selected ul - could have used a <template> instead
-// function createFeatureElement(feature) {
-//   const li = document.createElement("li");
-//   li.dataset.feature = feature;
+function swipeToCenter(feature) {
+  console.log(feature);
+  const previewToAnimate = document.querySelector(`[data-feature=${feature}]`);
 
-//   const img = document.createElement("img");
-//   img.src = `images/feature_${feature}.png`;
-//   img.alt = capitalize(feature);
+  const destination = document
+    .querySelector("#svgDiv svg")
+    .getBoundingClientRect();
+  console.log("last frame", destination);
+  setToFalse(previewToAnimate.dataset.feature);
+  // const deltaX = firstFrame.right - lastFrame.left;
+  // console.log(deltaX);
 
-//   li.append(img);
-
-//   return li;
-// }
-
-function capitalize(text) {
-  return text.substring(0, 1).toUpperCase() + text.substring(1).toLowerCase();
-}
-
-function animateFeatureForwards(feature) {
-  const boxToAnimate = document.querySelector(`img#${feature}Created`);
-  console.log(boxToAnimate);
-
-  const firstPosition = document.querySelector(
-    `#options [data-feature=${feature}] img`
-  );
-  console.log(firstPosition);
-
-  //FIRST FRAME
-  const firstFrame = firstPosition.getBoundingClientRect();
-  console.log(firstFrame);
-
-  // LAST FRAME
-  const lastFrame = boxToAnimate.getBoundingClientRect();
-  console.log("last frame", lastFrame);
-
-  //POSITION
-
-  const deltaX = firstFrame.left - lastFrame.left;
-  const deltaY = firstFrame.top - lastFrame.top;
-
-  boxToAnimate.animate(
-    //   //KEYFRAMES
-
-    [
-      {
-        transformOrigin: "top left",
-        transform: `translate(${deltaX}px, ${deltaY}px)`,
-      },
-      { transformOrigin: "top left", transform: "none" },
-    ],
-    //PROPERTIES
-
-    { duration: 1000, easing: "ease-in-out" }
-  );
-}
-function animateFeatureBackwards(feature) {
-  const boxToAnimate = document.querySelector(`img#${feature}Created`);
-  const lastPosition = document.querySelector(
-    `#options [data-feature=${feature}] img`
-  );
-  const firstFrame = boxToAnimate.getBoundingClientRect();
-  const lastFrame = lastPosition.getBoundingClientRect();
-  console.log("first positon", firstFrame);
-  console.log("last position", lastFrame);
-  const deltaX = lastFrame.left - firstFrame.left;
-  console.log("deltaX", deltaX);
-  const deltaY = lastFrame.top - firstFrame.top;
-  console.log("deltaY", deltaY);
-
-  boxToAnimate.animate(
-    //   //KEYFRAMES
+  previewToAnimate.animate(
+    //KEYFRAMES
 
     [
       {
@@ -188,11 +133,69 @@ function animateFeatureBackwards(feature) {
       },
       {
         transformOrigin: "top left",
-        transform: `translate(${deltaX}px, ${deltaY}px)`,
+        transform: `translateX(-${destination.width / 2}px)`,
       },
     ],
     //PROPERTIES
 
-    { duration: 1000, easing: "ease-in-out" }
+    {
+      duration: 1000,
+      easing: "ease-in-out",
+      iterations: "1",
+      fill: "forwards",
+    }
   );
+}
+
+function swipeToEnd(feature) {
+  // console.log("removing previous");
+  console.log(feature);
+  const previewToAnimate = document.querySelector(`[data-feature=${feature}]`);
+  // console.log(previewToAnimate);
+
+  const firstFrame = document
+    .querySelector("#svgDiv svg")
+    .getBoundingClientRect();
+
+  const destination = document
+    .querySelector("#svgDiv svg")
+    .getBoundingClientRect();
+  console.log("last frame", destination);
+
+  previewToAnimate.animate(
+    //KEYFRAMES
+
+    [
+      {
+        transformOrigin: "center",
+        transform: "none",
+      },
+      {
+        transformOrigin: "center",
+        transform: `translateX(-${destination.width / 2}px)`,
+      },
+    ],
+    //PROPERTIES
+
+    {
+      duration: 1000,
+      easing: "ease-in-out",
+      iterations: "1",
+      fill: "forwards",
+    }
+  );
+  previewToAnimate.addEventListener("animationend", function () {
+    console.log("hide");
+  });
+}
+// function removeOther(feature) {
+//   features[feature] = false;
+//   console.log(feature);
+//   document
+//     .querySelector(`[data-feature=${feature}]`)
+//     .classList.remove("chosen");
+//   swipeToEnd(feature);
+// }
+function setToFalse(feature) {
+  features[feature] = false;
 }
