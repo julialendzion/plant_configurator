@@ -7,8 +7,10 @@
 
 :root {
   --color-1: #314b1d;
+  --font-1:font-family: "Magilio";
+  --font-2:Arial, Helvetica, sans-serif
 }
-html {
+header {
   font-family: "Magilio";
 }
 
@@ -52,6 +54,12 @@ label {
   height: 42px;
   margin-top: 15px;
   border: solid 1px;
+}
+#input-label {
+  margin-top: 20px;
+  width: 6vw;
+  font-family: var(--font-2);
+  font-size: 1vw;
 }
 
 #svgDiv {
