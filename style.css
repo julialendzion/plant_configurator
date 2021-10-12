@@ -50,16 +50,16 @@ input {
 label {
   background-color: white;
   border-radius: 50%;
-  width: 42px;
-  height: 42px;
+  width: 30px;
+  height: 30px;
   margin-top: 15px;
   border: solid 1px;
 }
 #input-label {
   margin-top: 20px;
-  width: 6vw;
+  width: 5vw;
   font-family: var(--font-2);
-  font-size: 1vw;
+  font-size: 0.8vw;
 }
 
 #svgDiv {
