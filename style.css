@@ -36,6 +36,19 @@ main {
 #preview {
   margin: 1vw 0vw 2vw 7vw;
 }
+#colour_buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+input {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  margin-top: 15px;
+  padding: 10px;
+  border: solid 1px white;
+}
 
 #svgDiv {
   border: solid 3px var(--color-1);
