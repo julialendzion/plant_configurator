@@ -65,8 +65,8 @@ label {
 #svgDiv {
   border: solid 3px var(--color-1);
   border-radius: 50% 50% 0 0;
-  height: 35vw;
-  width: 29vw;
+  height: 32vw;
+  width: 25vw;
   box-shadow: 1px 1px 8px 1px #6a6969;
 }
 
@@ -132,8 +132,8 @@ label {
 }
 #preview img {
   position: absolute;
-  height: 35vw;
-  width: 29vw;
+  height: 32vw;
+  width: 25vw;
   height: auto;
   top: 80px;
   left: 0;

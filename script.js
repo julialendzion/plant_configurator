@@ -86,7 +86,7 @@ function toggleOption(event) {
     target.classList.add("chosen");
 
     previewToAnimate.classList.remove("hide");
-    previewToAnimate.style.left = "38%";
+    previewToAnimate.style.left = "33%";
     swipeToCenter(feature);
 
     // }
