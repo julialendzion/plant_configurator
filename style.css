@@ -70,3 +70,9 @@ svg {
   height: 100%;
   position: relative;
 }
+#pothos_preview {
+  border: solid red 1px;
+}
+#lilly_preview {
+  border: solid blue 1px;
+}
