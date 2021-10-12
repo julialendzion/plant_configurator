@@ -15,9 +15,7 @@ async function start() {
   let response = await fetch("empty_pot.svg");
   let mySvgData = await response.text();
   document.querySelector("div#svgDiv").innerHTML = mySvgData;
-  document
-    .querySelectorAll(".option")
-    .forEach((option) => option.addEventListener("click", toggleOption));
+  document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
   init();
 }
 
@@ -38,6 +36,11 @@ function init() {
       setColor(event.target.getAttribute("fill"));
     });
   });
+  document.querySelector("#colorInput").addEventListener("input", choseColor);
+}
+
+function choseColor(event) {
+  setColor(event.target.value);
 }
 
 function setElement(element) {
@@ -90,22 +93,18 @@ function toggleOption(event) {
 
     console.log(`Feature ${feature} is turned off!`);
     target.classList.remove("chosen");
-    const previewToAnimate = document.querySelector(
-      `[data-feature=${feature}]`
-    );
+    const previewToAnimate = document.querySelector(`[data-feature=${feature}]`);
     previewToAnimate.style.left = "0%";
     swipeToEnd(feature);
   }
-  document
-    .querySelectorAll(`#preview [data-sort=${sort}]`)
-    .forEach((displayed_feature) => {
-      // let currentlyChosen = document.querySelector(".chosen");
-      // console.log(currentlyChosen);
-      // swipeToEnd(displayed_feature.dataset.feature);
-      // console.log("displayed feature is", displayed_feature.dataset.feature);
-      displayed_feature.classList.add("hide");
-      console.log(`all ${sort} is removed`);
-    });
+  document.querySelectorAll(`#preview [data-sort=${sort}]`).forEach((displayed_feature) => {
+    // let currentlyChosen = document.querySelector(".chosen");
+    // console.log(currentlyChosen);
+    // swipeToEnd(displayed_feature.dataset.feature);
+    // console.log("displayed feature is", displayed_feature.dataset.feature);
+    displayed_feature.classList.add("hide");
+    console.log(`all ${sort} is removed`);
+  });
   let currentlyChosen = document.querySelector(".chosen");
   console.log(currentlyChosen);
   previewToAnimate.classList.remove("hide");
@@ -115,9 +114,7 @@ function swipeToCenter(feature) {
   console.log(feature);
   const previewToAnimate = document.querySelector(`[data-feature=${feature}]`);
 
-  const destination = document
-    .querySelector("#svgDiv svg")
-    .getBoundingClientRect();
+  const destination = document.querySelector("#svgDiv svg").getBoundingClientRect();
   console.log("last frame", destination);
   setToFalse(previewToAnimate.dataset.feature);
   // const deltaX = firstFrame.right - lastFrame.left;
@@ -153,13 +150,9 @@ function swipeToEnd(feature) {
   const previewToAnimate = document.querySelector(`[data-feature=${feature}]`);
   // console.log(previewToAnimate);
 
-  const firstFrame = document
-    .querySelector("#svgDiv svg")
-    .getBoundingClientRect();
+  const firstFrame = document.querySelector("#svgDiv svg").getBoundingClientRect();
 
-  const destination = document
-    .querySelector("#svgDiv svg")
-    .getBoundingClientRect();
+  const destination = document.querySelector("#svgDiv svg").getBoundingClientRect();
   console.log("last frame", destination);
 
   previewToAnimate.animate(
