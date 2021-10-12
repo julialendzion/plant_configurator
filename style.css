@@ -42,12 +42,16 @@ main {
 }
 
 input {
+  visibility: hidden;
+}
+
+label {
+  background-color: white;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 42px;
+  height: 42px;
   margin-top: 15px;
-  padding: 10px;
-  border: solid 1px white;
+  border: solid 1px;
 }
 
 #svgDiv {

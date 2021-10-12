@@ -11,6 +11,10 @@ const features = {
 document.addEventListener("DOMContentLoaded", start);
 let elementToPaint = [];
 
+$(document).on("change", "input[type=color]", function () {
+  this.parentNode.style.backgroundColor = this.value;
+});
+
 async function start() {
   let response = await fetch("empty_pot.svg");
   let mySvgData = await response.text();
@@ -41,6 +45,7 @@ function init() {
 
 function choseColor(event) {
   setColor(event.target.value);
+  document.querySelector("label").style.backgroundColor = event.target.value;
 }
 
 function setElement(element) {
