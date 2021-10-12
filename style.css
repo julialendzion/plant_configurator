@@ -49,7 +49,8 @@ main {
   display: flex;
 }
 
-/*  possible styling to the div - shouldn't ruin the animation */
+figcaption{font-family:var(--font-2) ;
+font-size: 1vw;}
 
 #preview {
   margin: 1vw 0vw 5vw 10vw;
@@ -81,11 +82,11 @@ label {
 } */
 #svgDiv {
   background-color: white;
-  border: solid 3px var(--color-2);
+  border: solid 3px #EBE3DC;
   border-radius: 50% 50% 0 0;
   height: 32vw;
   width: 25vw;
-  box-shadow: 1px 1px 8px 1px #3c3c3c;
+  box-shadow: 1px 1px 8px 1px #acacac;
  
 }
 
