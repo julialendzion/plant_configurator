@@ -7,11 +7,24 @@
 
 :root {
   --color-1: #314b1d;
+  --color-2:#4D89E3;
+  --color-3:#4A4848;
+  --color-4:#F7F7F7;
   --font-1:font-family: "Magilio";
   --font-2:Arial, Helvetica, sans-serif
 }
 header {
   font-family: "Magilio";
+}
+
+body{
+  background-color: var(--color-4);
+  background-image: url(assets/Group\ 4.svg);
+  background-repeat: none;
+  background-size: 140%;
+  background-position:center;
+background-position-x: 45%;
+background-position-y:40%
 }
 
 #shadow_Image {
@@ -20,14 +33,17 @@ header {
 }
 
 h1 {
-  margin-left: 6%;
+  margin-left: 46%;
   margin-top: 4vw;
+  margin-bottom: 4vw;
+
   color: var(--color-1);
   font-size: 3.75vw;
 }
 h2 {
   margin: 0;
-  font-size: 1.8vw;
+  font-size: 1.5vw;
+  color: var(--color-3);
 }
 main {
   display: flex;
@@ -36,7 +52,7 @@ main {
 /*  possible styling to the div - shouldn't ruin the animation */
 
 #preview {
-  margin: 1vw 0vw 2vw 7vw;
+  margin: 1vw 0vw 5vw 10vw;
 }
 #colour_buttons {
   display: flex;
@@ -52,22 +68,25 @@ label {
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  margin-top: 15px;
+  margin-top: 16px;
+  margin-left: 0;
   border: solid 1px;
 }
-#input-label {
-  margin-top: 20px;
-  width: 5vw;
-  font-family: var(--font-2);
-  font-size: 0.8vw;
-}
 
+
+/* #color-input{
+  font-size: 1.5vw;
+  margin-bottom: 3vw;
+
+} */
 #svgDiv {
-  border: solid 3px var(--color-1);
+  background-color: white;
+  border: solid 3px var(--color-2);
   border-radius: 50% 50% 0 0;
   height: 32vw;
   width: 25vw;
-  box-shadow: 1px 1px 8px 1px #6a6969;
+  box-shadow: 1px 1px 8px 1px #3c3c3c;
+ 
 }
 
 .color_btn {
@@ -80,7 +99,7 @@ label {
   display: flex;
 }
 #stand {
-  z-index: -1;
+  /* z-index: -1; */
 }
 
 .g_to_interact {
@@ -98,7 +117,7 @@ label {
 #buttons-container {
   height: fit-content;
   width: fit-content;
-  margin-top: 3vw;
+  
 }
 
 #buttons {
@@ -124,8 +143,9 @@ label {
 #optionsElse {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2vw;
-  width: 80%;
+  margin-bottom: 4vw;
+  margin-top: -1vw;
+  width: 60%;
 }
 .hide {
   opacity: 0;

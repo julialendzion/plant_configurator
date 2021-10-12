@@ -10,13 +10,13 @@
   </head>
   <body>
     <header>
-      <h1>Customise your plant </h1>
+      <h1>Customise your plant</h1>
     </header>
     <main>
       <div id="configurator">
         <div id="preview">
           <div id="svgDiv"></div>
-          <img src="assets/pothos.png" alt="Pothos" class="hide" data-feature="pothos" data-sort="plants"/>
+          <img src="assets/pothos.png" alt="Pothos" class="hide" data-feature="pothos" data-sort="plants" />
           <img src="assets/cactus.png" alt="Cactus" class="hide" data-feature="cactus" data-sort="plants" />
           <img src="assets/suculent.png" alt="Suculent" class="hide" data-feature="suculent" data-sort="plants" />
           <img src="assets/rope.png" alt="Rope" class="hide" data-feature="rope" data-sort="addOn" />
@@ -29,9 +29,9 @@
         </div>
       </div>
       <div id="buttons-container">
-        <h2>1. Choose the colour</h2>
+        <h2>1. Click on the element you want to paint and select a colour </h2>
         <div id="colour_buttons">
-        <svg viewBox="100 0 900 220" id="buttons" width="400" >
+        <svg viewBox="100 0 900 200" id="buttons" width="400">
           <pattern id="a" patternUnits="userSpaceOnUse" width="50" height="50" patternTransform="scale(1) rotate(0)">
             <rect x="0" y="0" width="100%" height="100%" fill="white" />
             <path
@@ -50,47 +50,47 @@
               fill="none"
             />
           </pattern>
-          
 
           <rect class="color_btn" x="110" width="75" height="75" fill="#a35430" rx="50" />
-          <rect class="color_btn" x="250" width="75" height="75" fill="#canary" rx="50" />
-          <rect class="color_btn" x="390" width="75" height="75" fill="#f0a886" rx="50" />
+          <rect class="color_btn" x="250" width="75" height="75" fill="#4D89E3" rx="50" />
+          <rect class="color_btn" x="390" width="75" height="75" fill="#314b1d" rx="50" />
           <rect class="color_btn" x="540" width="75" height="75" fill="lightpink" rx="50" />
           <rect class="color_btn" x="690" width="75" height="75" fill="url(#a)" rx="50" />
           <rect class="color_btn" x="840" width="75" height="75" fill="url(#b)" rx="50" />
         </svg>
-        <span id="input-label">choose your own colour:</span>
-       <label> <input type="color" id="colorInput" /></label>
-      </div>
-        <div id="options">
-          <h2>2. Choose your plant</h2>
-          <div id="optionsPlants">
-            <figure class="option" data-feature="pothos" data-sort="plants">
-              <img src="assets/pothos-narrow.png" alt="Pothos" />
-              <figcaption>Pothos</figcaption>
-            </figure>
-            <figure class="option" data-feature="cactus" data-sort="plants">
-              <img src="assets/cactus-narrow.png" alt="Cactus" />
-              <figcaption>Cactus</figcaption>
-            </figure>
-            <figure class="option" data-feature="suculent" data-sort="plants">
-              <img src="assets/suculent-narrow.png" alt="Suculent" />
-              <figcaption>Suculent</figcaption>
-            </figure>
-          </div>
-          <h2>3. Add some extras</h2>
-          <div id="optionsElse">
-            <figure class="option" data-feature="stand" data-sort="addOn">
-              <img src="assets/stand-narrow.png" alt="Stand" />
-              <figcaption>Stand</figcaption>
-            </figure>
-            <figure class="option" data-feature="rope" data-sort="addOn">
-              <img src="assets/rope-narrow.png" alt="Rope" />
-              <figcaption>Rope</figcaption>
-            </figure>
-          </div>
-        </div>
+     
     
+        <!-- <h2 id="color-input">choose different colour:</h2> -->
+        <label> <input type="color" id="colorInput" /></label>
+      </div>
+      <div id="options">
+        <h2>2. Choose your plant</h2>
+        <div id="optionsPlants">
+          <figure class="option" data-feature="pothos" data-sort="plants">
+            <img src="assets/pothos-narrow.png" alt="Pothos" />
+            <figcaption>Pothos</figcaption>
+          </figure>
+          <figure class="option" data-feature="cactus" data-sort="plants">
+            <img src="assets/cactus-narrow.png" alt="Cactus" />
+            <figcaption>Cactus</figcaption>
+          </figure>
+          <figure class="option" data-feature="suculent" data-sort="plants">
+            <img src="assets/suculent-narrow.png" alt="Suculent" />
+            <figcaption>Suculent</figcaption>
+          </figure>
+        </div>
+        <h2>3. Add some extras</h2>
+        <div id="optionsElse">
+          <figure class="option" data-feature="stand" data-sort="addOn">
+            <img src="assets/stand-narrow.png" alt="Stand" />
+            <figcaption>Stand</figcaption>
+          </figure>
+          <figure class="option" data-feature="rope" data-sort="addOn">
+            <img src="assets/rope-narrow.png" alt="Rope" />
+            <figcaption>Rope</figcaption>
+          </figure>
+        </div>
+      </div>
     </main>
     <script src="script.js"></script>
   </body>
