@@ -78,6 +78,7 @@ function toggleOption(event) {
     previewToAnimate.classList.remove("hide");
     previewToAnimate.style.left = "50%";
     swipeToCenter(feature);
+
     // }
 
     // TODO: More code
@@ -107,6 +108,7 @@ function toggleOption(event) {
   console.log(currentlyChosen);
   previewToAnimate.classList.remove("hide");
 }
+
 function swipeToCenter(feature) {
   console.log(feature);
   const previewToAnimate = document.querySelector(`[data-feature=${feature}]`);
@@ -115,7 +117,7 @@ function swipeToCenter(feature) {
     .querySelector("#svgDiv svg")
     .getBoundingClientRect();
   console.log("last frame", destination);
-
+  setToFalse(previewToAnimate.dataset.feature);
   // const deltaX = firstFrame.right - lastFrame.left;
   // console.log(deltaX);
 
@@ -142,6 +144,7 @@ function swipeToCenter(feature) {
     }
   );
 }
+
 function swipeToEnd(feature) {
   // console.log("removing previous");
   console.log(feature);
@@ -191,3 +194,6 @@ function swipeToEnd(feature) {
 //     .classList.remove("chosen");
 //   swipeToEnd(feature);
 // }
+function setToFalse(feature) {
+  features[feature] = false;
+}
