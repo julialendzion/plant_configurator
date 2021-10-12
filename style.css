@@ -44,6 +44,9 @@ main {
 #buttons {
   display: flex;
 }
+#stand {
+  z-index: -1;
+}
 
 .g_to_interact {
   fill: white;

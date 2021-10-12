@@ -3,7 +3,9 @@
 const features = {
   pothos: false,
   cactus: false,
-  lilly: false,
+  suculent: false,
+  rope: false,
+  stand: false,
 };
 
 document.addEventListener("DOMContentLoaded", start);
