@@ -99,9 +99,6 @@ label {
 #buttons {
   display: flex;
 }
-#stand {
-  /* z-index: -1; */
-}
 
 .g_to_interact {
   fill: white;
@@ -123,6 +120,10 @@ label {
 
 #buttons {
   margin-top: 1rem;
+}
+
+[data-sort="plants"]{
+  z-index: 1;
 }
 
 #preview svg {
@@ -162,10 +163,7 @@ label {
 }
 
 #preview {
-  /* width: 60%;
-  height: 100%; */
   position: relative;
 }
 #configurator {
-  width: 47%;
-}
+  width: 47%;}

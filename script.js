@@ -6,6 +6,7 @@ const features = {
   suculent: false,
   rope: false,
   stand: false,
+  basket: false,
 };
 
 document.addEventListener("DOMContentLoaded", start);
@@ -19,7 +20,9 @@ async function start() {
   let response = await fetch("empty_pot.svg");
   let mySvgData = await response.text();
   document.querySelector("div#svgDiv").innerHTML = mySvgData;
-  document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
+  document
+    .querySelectorAll(".option")
+    .forEach((option) => option.addEventListener("click", toggleOption));
   init();
 }
 
@@ -74,20 +77,11 @@ function toggleOption(event) {
     features[feature] = true;
     // TODO: More code
     console.log(`Feature ${feature} is turned on!`);
-
-    //CHECK IF A CLASS IS PRESENT
-    // let currentlyChosen = document.getElementsByClassName("chosen");
-    // console.log(currentlyChosen.length);
-    // if (currentlyChosen.length > 0) {
-    //   console.log(currentlyChosen.length);
-    // const elementToremove = document.querySelector(".chosen");
-    // removeOther(elementToremove.dataset.feature);
-    // } else {
-    target.classList.add("chosen");
-
+    previewToAnimate.classList.add("chosen");
     previewToAnimate.classList.remove("hide");
     previewToAnimate.style.left = "35%";
     swipeToCenter(feature);
+    // createImg(feature);
 
     // }
 
@@ -97,19 +91,21 @@ function toggleOption(event) {
     features[feature] = false;
 
     console.log(`Feature ${feature} is turned off!`);
-    target.classList.remove("chosen");
-    const previewToAnimate = document.querySelector(`[data-feature=${feature}]`);
-    previewToAnimate.style.left = "0%";
+    previewToAnimate.classList.remove("chosen");
+    // previewToAnimate.classList.add("hide");
+    // previewToAnimate.style.left = "0%";
     swipeToEnd(feature);
   }
-  document.querySelectorAll(`#preview [data-sort=${sort}]`).forEach((displayed_feature) => {
-    // let currentlyChosen = document.querySelector(".chosen");
-    // console.log(currentlyChosen);
-    // swipeToEnd(displayed_feature.dataset.feature);
-    // console.log("displayed feature is", displayed_feature.dataset.feature);
-    displayed_feature.classList.add("hide");
-    console.log(`all ${sort} is removed`);
-  });
+  document
+    .querySelectorAll(`#preview [data-sort=${sort}]`)
+    .forEach((displayed_feature) => {
+      let currentlyChosen = document.querySelector(".chosen");
+      console.log(currentlyChosen);
+      // swipeToEnd(displayed_feature.dataset.feature);
+      console.log("displayed feature is", displayed_feature.dataset.feature);
+      displayed_feature.classList.add("hide");
+      console.log(`all ${sort} is removed`);
+    });
   let currentlyChosen = document.querySelector(".chosen");
   console.log(currentlyChosen);
   previewToAnimate.classList.remove("hide");
@@ -119,9 +115,11 @@ function swipeToCenter(feature) {
   console.log(feature);
   const previewToAnimate = document.querySelector(`[data-feature=${feature}]`);
 
-  const destination = document.querySelector("#svgDiv svg").getBoundingClientRect();
+  const destination = document
+    .querySelector("#svgDiv svg")
+    .getBoundingClientRect();
   console.log("last frame", destination);
-  setToFalse(previewToAnimate.dataset.feature);
+  // setToFalse(previewToAnimate.dataset.feature);
   // const deltaX = firstFrame.right - lastFrame.left;
   // console.log(deltaX);
 
@@ -152,48 +150,57 @@ function swipeToCenter(feature) {
 function swipeToEnd(feature) {
   // console.log("removing previous");
   console.log(feature);
-  const previewToAnimate = document.querySelector(`[data-feature=${feature}]`);
+
+  document.querySelector(`[data-feature=${feature}]`).classList.add("hide");
   // console.log(previewToAnimate);
 
-  const firstFrame = document.querySelector("#svgDiv svg").getBoundingClientRect();
+  // const firstFrame = document
+  //   .querySelector("#svgDiv svg")
+  //   .getBoundingClientRect();
 
-  const destination = document.querySelector("#svgDiv svg").getBoundingClientRect();
-  console.log("last frame", destination);
+  // const destination = document
+  //   .querySelector("#svgDiv svg")
+  //   .getBoundingClientRect();
+  // console.log("last frame", destination);
 
-  previewToAnimate.animate(
-    //KEYFRAMES
+  // previewToAnimate.animate(
+  //KEYFRAMES
 
-    [
-      {
-        transformOrigin: "center",
-        transform: "none",
-      },
-      {
-        transformOrigin: "center",
-        transform: `translateX(-${destination.width / 2}px)`,
-      },
-    ],
-    //PROPERTIES
+  //   [
+  //     {
+  //       transformOrigin: "center",
+  //       transform: "none",
+  //     },
+  //     {
+  //       transformOrigin: "center",
+  //       transform: `translateX(-${destination.width / 2}px)`,
+  //     },
+  //   ],
+  //   //PROPERTIES
 
-    {
-      duration: 1000,
-      easing: "ease-in-out",
-      iterations: "1",
-      fill: "forwards",
-    }
-  );
-  previewToAnimate.addEventListener("animationend", function () {
-    console.log("hide");
-  });
+  //   {
+  //     duration: 1000,
+  //     easing: "ease-in-out",
+  //     iterations: "1",
+  //     fill: "forwards",
+  //   }
+  // );
+  // previewToAnimate.addEventListener("animationend", function () {
+  //   console.log("hide");
+  // });
 }
-// function removeOther(feature) {
-//   features[feature] = false;
-//   console.log(feature);
-//   document
-//     .querySelector(`[data-feature=${feature}]`)
-//     .classList.remove("chosen");
-//   swipeToEnd(feature);
-// }
+
 function setToFalse(feature) {
   features[feature] = false;
 }
+// function createImg(feature) {
+//   const selectedFeatureImg = document.createElement("img");
+//   selectedFeatureImg.id = `${feature}Created`;
+//   selectedFeatureImg.src = `assets/${feature}.png`;
+//   selectedFeatureImg.alt = capitalize(feature);
+//   selectedFeatureImg.style.height = "8vw";
+//   document.querySelector("#selected ul").appendChild(selectedFeatureImg);
+// }
+// function capitalize(text) {
+//   return text.substring(0, 1).toUpperCase() + text.substring(1).toLowerCase();
+// }
