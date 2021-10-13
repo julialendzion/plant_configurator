@@ -17,12 +17,10 @@ $(document).on("change", "input[type=color]", function () {
 });
 
 async function start() {
-  let response = await fetch("empty_pot.svg");
+  let response = await fetch("empty_pot-01.svg");
   let mySvgData = await response.text();
   document.querySelector("div#svgDiv").innerHTML = mySvgData;
-  document
-    .querySelectorAll(".option")
-    .forEach((option) => option.addEventListener("click", toggleOption));
+  document.querySelectorAll(".option").forEach((option) => option.addEventListener("click", toggleOption));
   init();
 }
 
@@ -96,16 +94,14 @@ function toggleOption(event) {
     // previewToAnimate.style.left = "0%";
     swipeToEnd(feature);
   }
-  document
-    .querySelectorAll(`#preview [data-sort=${sort}]`)
-    .forEach((displayed_feature) => {
-      let currentlyChosen = document.querySelector(".chosen");
-      console.log(currentlyChosen);
-      // swipeToEnd(displayed_feature.dataset.feature);
-      console.log("displayed feature is", displayed_feature.dataset.feature);
-      displayed_feature.classList.add("hide");
-      console.log(`all ${sort} is removed`);
-    });
+  document.querySelectorAll(`#preview [data-sort=${sort}]`).forEach((displayed_feature) => {
+    let currentlyChosen = document.querySelector(".chosen");
+    console.log(currentlyChosen);
+    // swipeToEnd(displayed_feature.dataset.feature);
+    console.log("displayed feature is", displayed_feature.dataset.feature);
+    displayed_feature.classList.add("hide");
+    console.log(`all ${sort} is removed`);
+  });
   let currentlyChosen = document.querySelector(".chosen");
   console.log(currentlyChosen);
   previewToAnimate.classList.remove("hide");
@@ -115,9 +111,7 @@ function swipeToCenter(feature) {
   console.log(feature);
   const previewToAnimate = document.querySelector(`[data-feature=${feature}]`);
 
-  const destination = document
-    .querySelector("#svgDiv svg")
-    .getBoundingClientRect();
+  const destination = document.querySelector("#svgDiv svg").getBoundingClientRect();
   console.log("last frame", destination);
   // setToFalse(previewToAnimate.dataset.feature);
   // const deltaX = firstFrame.right - lastFrame.left;

@@ -84,8 +84,8 @@ label {
   background-color: white;
   border: solid 3px #EBE3DC;
   border-radius: 50% 50% 0 0;
-  height: 32vw;
-  width: 25vw;
+  height: 35vw;
+  width: 26vw;
   box-shadow: 1px 1px 8px 1px #acacac;
  
 }
@@ -128,7 +128,7 @@ label {
 
 #preview svg {
   overflow: visible;
-  padding-top: 80px;
+  /* padding-top: 80px; */
 
   /* width: 50vw; */
 }
