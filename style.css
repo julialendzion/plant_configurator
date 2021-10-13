@@ -143,12 +143,15 @@ label {
   margin: 2vw 0 0 0;
 }
 #optionsPlants,
-#optionsElse {
+#optionsExtras {
   display: flex;
   justify-content: space-between;
   margin-bottom: 4vw;
   margin-top: -1vw;
   width: 60%;
+}
+#optionsExtras {
+  align-items: baseline;
 }
 .hide {
   opacity: 0;
