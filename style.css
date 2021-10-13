@@ -142,13 +142,21 @@ label {
   text-align: center;
   margin: 2vw 0 0 0;
 }
-#optionsPlants,
+
 #optionsExtras {
   display: flex;
   justify-content: space-between;
   margin-bottom: 4vw;
   margin-top: -1vw;
-  width: 60%;
+  width: 80%;
+}
+
+#optionsPlants {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4vw;
+  margin-top: -1vw;
+  width: 90%;
 }
 #optionsExtras {
   align-items: baseline;
@@ -171,4 +179,13 @@ label {
 }
 #configurator {
   width: 47%;
+}
+
+#refresh,
+#refreshAddon {
+  opacity: 50%;
+  cursor: pointer;
+  /* margin-top: 1rem;
+  width: 1rem;
+  height: auto; */
 }

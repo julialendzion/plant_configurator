@@ -42,6 +42,8 @@ function init() {
     });
   });
   document.querySelector("#colorInput").addEventListener("input", choseColor);
+  document.querySelector("#refresh").addEventListener("click", refreshPlant);
+  document.querySelector("#refreshAddon").addEventListener("click", refreshAddons);
 }
 
 function choseColor(event) {
@@ -198,3 +200,22 @@ function setToFalse(feature) {
 // function capitalize(text) {
 //   return text.substring(0, 1).toUpperCase() + text.substring(1).toLowerCase();
 // }
+
+function refreshPlant() {
+  // let defaultColor = "grey";
+  document.querySelectorAll(`#preview [data-sort="plants"]`).forEach((element) => {
+    element.classList.remove("chosen");
+    element.classList.add("hide");
+  });
+
+  // document.querySelectorAll(".g_to_interact").forEach((paint) => {
+  //   paint.style.fill = defaultColor;
+  // });
+}
+
+function refreshAddons() {
+  document.querySelectorAll(`#preview [data-sort="addOn"]`).forEach((element) => {
+    element.classList.remove("chosen");
+    element.classList.add("hide");
+  });
+}
