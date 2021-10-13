@@ -7,24 +7,24 @@
 
 :root {
   --color-1: #314b1d;
-  --color-2:#4D89E3;
-  --color-3:#4A4848;
-  --color-4:#F7F7F7;
-  --font-1:font-family: "Magilio";
-  --font-2:Arial, Helvetica, sans-serif
+  --color-2: #4d89e3;
+  --color-3: #4a4848;
+  --color-4: #f7f7f7;
+  --font-1: "Magilio";
+  --font-2: Arial, Helvetica, sans-serif;
 }
 header {
   font-family: "Magilio";
 }
 
-body{
+body {
   background-color: var(--color-4);
   background-image: url(assets/Group\ 4.svg);
   background-repeat: none;
   background-size: 140%;
-  background-position:center;
-background-position-x: 45%;
-background-position-y:40%
+  background-position: center;
+  background-position-x: 45%;
+  background-position-y: 40%;
 }
 
 #shadow_Image {
@@ -44,13 +44,17 @@ h2 {
   margin: 0;
   font-size: 1.5vw;
   color: var(--color-3);
+  font-family: var(--font-1);
+  font-weight: lighter;
 }
 main {
   display: flex;
 }
 
-figcaption{font-family:var(--font-2) ;
-font-size: 1vw;}
+figcaption {
+  font-family: var(--font-2);
+  font-size: 1vw;
+}
 
 #preview {
   margin: 1vw 0vw 5vw 10vw;
@@ -74,7 +78,6 @@ label {
   border: solid 1px;
 }
 
-
 /* #color-input{
   font-size: 1.5vw;
   margin-bottom: 3vw;
@@ -82,12 +85,11 @@ label {
 } */
 #svgDiv {
   background-color: white;
-  border: solid 3px #EBE3DC;
+  border: solid 3px #ebe3dc;
   border-radius: 50% 50% 0 0;
   height: 32vw;
   width: 25vw;
   box-shadow: 1px 1px 8px 1px #acacac;
- 
 }
 
 .color_btn {
@@ -115,14 +117,13 @@ label {
 #buttons-container {
   height: fit-content;
   width: fit-content;
-  
 }
 
 #buttons {
   margin-top: 1rem;
 }
 
-[data-sort="plants"]{
+[data-sort="plants"] {
   z-index: 1;
 }
 
@@ -166,4 +167,5 @@ label {
   position: relative;
 }
 #configurator {
-  width: 47%;}
+  width: 47%;
+}
