@@ -50,6 +50,7 @@ h2 {
 }
 main {
   display: flex;
+  flex-direction: row;
 }
 
 figcaption {
@@ -203,4 +204,41 @@ figure img {
   flex-direction: row;
   justify-content: left;
   align-items: center;
+}
+
+/* media queries */
+
+@media only screen and (min-width: 300px) and (max-width: 500px) {
+  main {
+    flex-direction: column;
+  }
+
+  h1 {
+    margin: 0.5rem 3rem;
+    text-align: center;
+  }
+  #configurator {
+    display: flex;
+    justify-items: center;
+  }
+
+  #preview {
+    display: flex;
+    justify-content: center;
+    margin-left: 70%;
+  }
+  #refresh,
+  #refresh_button,
+  #refreshAddon {
+    margin: 0 0.2rem;
+    width: 1rem;
+    cursor: pointer;
+  }
+
+  .color_btn {
+    cursor: pointer;
+    width: "20";
+    height: "20";
+    padding: 10vw;
+  }
 }
