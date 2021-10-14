@@ -69,13 +69,17 @@ input {
 }
 
 label {
-  background-color: white;
+  /* background-color: white; */
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   margin-top: 16px;
   margin-left: 0;
   border: solid 1px;
+  background-image: url(assets/color-picker.png);
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* #color-input{
