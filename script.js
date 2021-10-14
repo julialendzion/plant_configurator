@@ -44,6 +44,7 @@ function init() {
   document.querySelector("#colorInput").addEventListener("input", choseColor);
   document.querySelector("#refresh").addEventListener("click", refreshPlant);
   document.querySelector("#refreshAddon").addEventListener("click", refreshAddons);
+  document.querySelector("#refresh_button").addEventListener("click", refreshColor);
 }
 
 function choseColor(event) {
@@ -71,12 +72,12 @@ function toggleOption(event) {
   const feature = target.dataset.feature;
   const sort = target.dataset.sort;
   const previewToAnimate = document.querySelector(`[data-feature=${feature}]`);
-  console.log(sort);
+  //  console.log(sort);
   if (features[feature] == false) {
     // feature added
     features[feature] = true;
     // TODO: More code
-    console.log(`Feature ${feature} is turned on!`);
+    // console.log(`Feature ${feature} is turned on!`);
     previewToAnimate.classList.add("chosen");
     previewToAnimate.classList.remove("hide");
     previewToAnimate.style.left = "35%";
@@ -90,7 +91,7 @@ function toggleOption(event) {
     // feature removed
     features[feature] = false;
 
-    console.log(`Feature ${feature} is turned off!`);
+    //   console.log(`Feature ${feature} is turned off!`);
     previewToAnimate.classList.remove("chosen");
     // previewToAnimate.classList.add("hide");
     // previewToAnimate.style.left = "0%";
@@ -98,19 +99,18 @@ function toggleOption(event) {
   }
   document.querySelectorAll(`#preview [data-sort=${sort}]`).forEach((displayed_feature) => {
     let currentlyChosen = document.querySelector(".chosen");
-    console.log(currentlyChosen);
+    //   console.log(currentlyChosen);
     // swipeToEnd(displayed_feature.dataset.feature);
     console.log("displayed feature is", displayed_feature.dataset.feature);
     displayed_feature.classList.add("hide");
     console.log(`all ${sort} is removed`);
   });
   let currentlyChosen = document.querySelector(".chosen");
-  console.log(currentlyChosen);
+  // console.log(currentlyChosen);
   previewToAnimate.classList.remove("hide");
 }
 
 function swipeToCenter(feature) {
-  console.log(feature);
   const previewToAnimate = document.querySelector(`[data-feature=${feature}]`);
 
   const destination = document.querySelector("#svgDiv svg").getBoundingClientRect();
@@ -202,20 +202,24 @@ function setToFalse(feature) {
 // }
 
 function refreshPlant() {
-  // let defaultColor = "grey";
   document.querySelectorAll(`#preview [data-sort="plants"]`).forEach((element) => {
     element.classList.remove("chosen");
     element.classList.add("hide");
   });
-
-  // document.querySelectorAll(".g_to_interact").forEach((paint) => {
-  //   paint.style.fill = defaultColor;
-  // });
 }
 
 function refreshAddons() {
   document.querySelectorAll(`#preview [data-sort="addOn"]`).forEach((element) => {
     element.classList.remove("chosen");
     element.classList.add("hide");
+  });
+}
+
+function refreshColor() {
+  let defaultColor = "white";
+
+  document.querySelectorAll(".g_to_interact path").forEach((paint) => {
+    console.log(paint);
+    paint.style.fill = defaultColor;
   });
 }
