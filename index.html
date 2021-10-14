@@ -34,7 +34,11 @@
         </div>
       </div>
       <div id="buttons-container">
-        <h2>1. Click on the element you want to paint and select a colour </h2>
+        <div class="refresh">
+          <h2>1. Click on the element you want to paint and select a colour </h2>
+          <img id="refresh_button" src="refresh-svg.svg">
+
+        </div>
         <div id="colour_buttons">
         <svg viewBox="100 0 900 200" id="buttons" width="400">
           <pattern id="a" patternUnits="userSpaceOnUse" width="50" height="50" patternTransform="scale(1) rotate(0)">
@@ -67,10 +71,12 @@
     
         <!-- <h2 id="color-input">choose different colour:</h2> -->
         <label> <input type="color" id="colorInput" /></label>
-        <img id="refresh_button" src="refresh-svg.svg">
       </div>
       <div id="options">
-        <h2>2. Choose your plant</h2>
+        <div class="refresh">
+          <h2>2. Choose your plant</h2>
+          <img id="refresh" src="refresh-svg.svg" alt="Refresh" />
+        </div>
         <div id="optionsPlants">
           <figure class="option" data-feature="pothos" data-sort="plants">
             <img src="assets/pothos-narrow.png" alt="Pothos" />
@@ -84,15 +90,14 @@
             <img src="assets/suculent-narrow.png" alt="Suculent" />
             <figcaption>Suculent</figcaption>
           </figure>
-          <figure class="refresh">
-            <img id="refresh" src="refresh-svg.svg" alt="Refresh" />
-            <!-- <figcaption>Refresh</figcaption> -->
+         
 
-          </figure>
-   
 
         </div>
-        <h2>3. Add some extras</h2>
+        <div class="refresh">
+          <h2>3. Add some extras</h2>
+          <img id="refreshAddon" src="refresh-svg.svg" alt="Basket" />
+        </div>
         <div id="optionsExtras">
           <figure class="option" data-feature="stand" data-sort="addOn">
             <img src="assets/stand-narrow.png" alt="Stand" />
@@ -106,9 +111,7 @@
             <img src="assets/basket-narrow.png" alt="Basket" />
             <figcaption>Basket</figcaption>
           </figure>
-          <figure class="refreshAddon" >
-            <img id="refreshAddon" src="refresh-svg.svg" alt="Basket" />
-          </figure>
+          
         </div>
       </div>
     </main>

@@ -164,7 +164,7 @@ figure img {
   justify-content: space-between;
   margin-bottom: 4vw;
   margin-top: -1vw;
-  width: 90%;
+  width: 70%;
 }
 #optionsExtras {
   align-items: baseline;
@@ -190,19 +190,16 @@ figure img {
 }
 
 #refresh,
+#refresh_button,
 #refreshAddon {
+  margin: 0 1rem;
+  width: 2rem;
+  cursor: pointer;
   opacity: 50%;
-  cursor: pointer;
-  width: 3rem;
-  margin: 2.5rem 0;
-  /* margin-top: 1rem;
-  width: 1rem;
-  height: auto; */
 }
-
-#refresh_button {
-  width: 7%;
-  height: 7%;
-  margin: 1rem 1.2rem;
-  cursor: pointer;
+.refresh {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
 }
