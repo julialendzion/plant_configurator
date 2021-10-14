@@ -16,7 +16,7 @@
 }
 .option {
   position: relative;
-  height: 80px;
+  height: 120px;
 }
 p {
   margin: 0;
@@ -28,15 +28,15 @@ p {
   background-color: var(--color-3);
 }
 .hover_text {
-  position: relative;
+  position: absolute;
   margin: 0;
   padding: 0;
-  /* top: 90;
+  top: 90;
   bottom: 0;
   left: 0;
-  right: 0; */
-  background: black;
-  color: black;
+  right: 0;
+  /* background: black;
+  color: black; */
   visibility: hidden;
   opacity: 0;
 
