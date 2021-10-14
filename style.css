@@ -137,6 +137,10 @@ label {
 #options img {
   width: 75%;
 }
+
+#options img:hover {
+  cursor: pointer;
+}
 #options figure {
   width: 9vw;
   text-align: center;
