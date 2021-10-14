@@ -75,7 +75,7 @@ label {
   height: 32px;
   margin-top: 16px;
   margin-left: 0;
-  border: solid 1px;
+  border: solid 1px var(--color-3);
   background-image: url(assets/color-picker.png);
   background-size: 65%;
   background-repeat: no-repeat;
