@@ -4,13 +4,15 @@
   font-weight: normal;
   font-style: normal;
 }
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
 :root {
   --color-1: #314b1d;
   --color-2: #4d89e3;
   --color-3: #4a4848;
   --color-4: #f7f7f7;
   --font-1: "Magilio";
-  --font-2: Arial, Helvetica, sans-serif;
+  --font-2: "Montserrat", sans-serif;
 }
 .option {
   position: relative;
@@ -87,7 +89,7 @@ main {
 
 figcaption {
   font-family: var(--font-2);
-  font-size: 1vw;
+  font-size: 1.1vw;
 }
 
 #preview {
@@ -198,7 +200,7 @@ figure img {
   justify-content: space-between;
   margin-bottom: 4vw;
   margin-top: -1vw;
-  width: 70%;
+  width: 75%;
 }
 #optionsExtras {
   align-items: baseline;
